@@ -88,6 +88,27 @@ function check_raylib()
     end
 end
 
+function use_files(repo, files, dest, branch)
+    branch = branch or "main"
+
+    if not os.isdir(dest) then
+        os.mkdir(dest)
+    end
+
+    for _, file in ipairs(files) do
+        local url = string.format("https://raw.githubusercontent.com/%s/%s/%s", repo, branch, file)
+        local outPath = path.join(dest, path.getname(file)) -- keep filename only
+
+        if not os.isfile(outPath) then
+            printf("Downloading: %s -> %s", url, outPath)
+            local ok, err = http.download(url, outPath)
+            if not ok then
+                printf("Failed to download %s: %s", file, err or "unknown error")
+            end
+        end
+    end
+end
+
 function use_library(libraryName, githubFolder, repoHead)
     libFolder = libraryName .. "-" .. repoHead
     zipFile = libFolder .. ".zip"

@@ -78,6 +78,14 @@ function link_raylib()
     links {"raylib"}
 
     raylib_dir = get_raylib_dir();
+
+    use_files("raysan5/raygui", {"src/raygui.h"}, "../" .. raylib_dir .. "/src", "master")
+    use_files("raysan5/rini", {"src/rini.h"}, "../" .. raylib_dir .. "/src", "main")
+    use_files("raysan5/rpng", {"src/rpng.h"}, "../" .. raylib_dir .. "/src", "master")
+    use_files("raysan5/rres", {"src/rres.h"}, "../" .. raylib_dir .. "/src", "master")
+
+    defines {"RAYGUI_IMPLEMENTATION", "RINI_IMPLEMENTATION", "RPNG_IMPLEMENTATION", "RRES_IMPLEMENTATION"}
+
     includedirs {"../" .. raylib_dir .. "/src" }
     includedirs {"../" .. raylib_dir .."/src/external" }
     includedirs {"../" .. raylib_dir .."/src/external/glfw/include" }
