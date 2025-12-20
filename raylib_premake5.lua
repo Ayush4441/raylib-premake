@@ -83,6 +83,7 @@ function link_raylib()
     use_files("raysan5/rini", {"src/rini.h"}, "../" .. raylib_dir .. "/src", "main")
     use_files("raysan5/rpng", {"src/rpng.h"}, "../" .. raylib_dir .. "/src", "master")
     use_files("raysan5/rres", {"src/rres.h"}, "../" .. raylib_dir .. "/src", "master")
+    use_files("raylib-extras/rmem", {"src/rmem.h"}, "../" .. raylib_dir .. "/src", "main")
     use_files("victorfisac/Physac", {"src/physac.h"}, "../" .. raylib_dir .. "/src", "master")
 
     defines {"RAYGUI_IMPLEMENTATION", "RINI_IMPLEMENTATION", "RPNG_IMPLEMENTATION", "RRES_IMPLEMENTATION", "PHYSAC_IMPLEMENTATION"}
