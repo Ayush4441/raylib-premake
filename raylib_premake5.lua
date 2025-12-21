@@ -86,7 +86,7 @@ function link_raylib()
     use_files("raylib-extras/rmem", {"src/rmem.h"}, "../" .. raylib_dir .. "/src", "main")
     use_files("victorfisac/Physac", {"src/physac.h"}, "../" .. raylib_dir .. "/src", "master")
 
-    defines {"RAYGUI_IMPLEMENTATION", "RINI_IMPLEMENTATION", "RPNG_IMPLEMENTATION", "RRES_IMPLEMENTATION", "PHYSAC_IMPLEMENTATION"}
+    defines {"RAYGUI_IMPLEMENTATION", "RINI_IMPLEMENTATION", "RPNG_IMPLEMENTATION", "RRES_IMPLEMENTATION", "PHYSAC_IMPLEMENTATION", "RMEM_IMPLEMENTATION"}
 
     includedirs {"../" .. raylib_dir .. "/src" }
     includedirs {"../" .. raylib_dir .."/src/external" }
